@@ -9,9 +9,8 @@
 - 기사 메타데이터 추출 (제목, 날짜, 작성자, 카테고리 등)
 
 ## 기술 스택
-- Python
-- BeautifulSoup4 / Scrapy (웹 크롤링)
-- SQLite / PostgreSQL (데이터베이스)
+- Python 3.12.8
+- MySQL (데이터베이스)
 - pandas (데이터 처리)
 
 ## 프로젝트 구조
