@@ -19,7 +19,7 @@ COPY . .
 RUN python setup_db.py
 
 # 포트 노출
-EXPOSE 8080
+EXPOSE 8000
 
 # 실행 명령
 CMD ["python", "main.py"]
