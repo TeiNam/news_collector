@@ -13,20 +13,6 @@
 - MySQL (데이터베이스)
 - pandas (데이터 처리)
 
-## 프로젝트 구조
-```angular2html
-news_crawler/
-├── src/                    # 소스 코드
-│   ├── crawlers/          # 크롤러 모듈
-│   │   ├── base.py       # 기본 크롤러 클래스
-│   │   └── sites/        # 사이트별 크롤러
-│   ├── database/         # 데이터베이스 관련 모듈
-│   └── utils/            # 유틸리티 함수
-├── config/               # 설정 파일
-├── data/                # 수집된 데이터 저장
-├── tests/               # 테스트 코드
-└── requirements.txt     # 프로젝트 의존성
-```
 
 ## 설치 방법
 1. 저장소 클론
