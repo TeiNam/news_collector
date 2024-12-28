@@ -1,5 +1,6 @@
 services:
   app:
+    platform: linux/amd64
     build: .
     image: news_collector:1.0
     ports:

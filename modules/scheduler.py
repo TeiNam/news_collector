@@ -16,7 +16,7 @@ class SchedulerThread(threading.Thread):
     def __init__(self, run_immediately=False):
         super().__init__()
         self.is_running = False
-        self.schedule_times = ["08:00", "12:00", "14:30", "20:00"]
+        self.schedule_times = ["00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00"]
         self.run_immediately = run_immediately
 
     def run(self):

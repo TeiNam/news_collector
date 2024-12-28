@@ -1,4 +1,4 @@
-FROM python:3.12.8-slim
+FROM --platform=linux/amd64 python:3.12.8-slim
 
 WORKDIR /app
 

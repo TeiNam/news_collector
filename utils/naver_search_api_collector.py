@@ -23,6 +23,10 @@ class NaverNewsAPI:
             "X-Naver-Client-Secret": self.client_secret
         }
 
+    def clean_title(self, title: str) -> str:
+        """HTML 태그와 엔티티를 제거"""
+        return title.replace('<b>', '').replace('</b>', '').replace('&quot;', '')
+
     def search_news(self, query: str, start: int = 1) -> Dict:
         params = {
             "query": query,
@@ -102,7 +106,8 @@ def collect_daily_news(date: str = None):
 
                     for item in news_items:
                         try:
-                            title = item['title'].replace('<b>', '').replace('</b>', '')
+                            # HTML 태그와 엔티티를 제거한 제목
+                            title = api.clean_title(item['title'])
 
                             exclude = any(ex_keyword.lower() in title.lower()
                                         for ex_keyword in EXCLUDE_KEYWORDS)
