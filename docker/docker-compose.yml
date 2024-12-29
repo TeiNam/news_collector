@@ -1,0 +1,39 @@
+services:
+  news-collector:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: news-collector
+    env_file:
+      - ../.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - news-network
+    command: sh -c "python docker/setup_db.py && python main.py"
+
+  db:
+    image: mysql:8.0
+    container_name: news-db
+    env_file:
+      - ../.env
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - news-network
+    command: --character-set-server=utf8mb4 
+             --collation-server=utf8mb4_unicode_ci
+             --default-authentication-plugin=mysql_native_password
+
+networks:
+  news-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
